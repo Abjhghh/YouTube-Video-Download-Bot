@@ -1,6 +1,6 @@
-# ©️ LISA-KOREA | @LISA_FAN_LK | NT_BOT_CHANNEL | LISA-KOREA/YouTube-Video-Download-Bot
+# ©️ LISA-KOREA | @Zion_owner| NT_BOT_CHANNEL | LISA-KOREA/YouTube-Video-Download-Bot
 
-# [⚠️ Do not change this repo link ⚠️] :- https://github.com/LISA-KOREA/YouTube-Video-Download-Bot
+# [⚠️ Do not change this repo link ⚠️] :- https://github.com/abjhghh/YouTube-Video-Download-Bot
 
 
 import logging
@@ -11,9 +11,9 @@ from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
 ########################🎊 Lisa | NT BOTS 🎊######################################################
 # Replace 'YOUR_API_ID', 'YOUR_API_HASH', and 'YOUR_BOT_TOKEN' with your actual values
-API_ID = ''
-API_HASH = ''
-BOT_TOKEN = ''
+API_ID = '25595324'
+API_HASH = '0102b3dbf501dc0fb3176d4c9685eec8'
+BOT_TOKEN = '6899132841:AAHd2IqPtUpq9dl1Ufcc6j6ThtH19dJIMz4'
 #########################
 # Add Your Channel Id 
 CHANNEL = ''
@@ -22,7 +22,7 @@ HTTP_PROXY = ''
 #########################
 youtube_dl_username = None  
 youtube_dl_password = None  
-########################🎊 Lisa | NT BOTS 🎊######################################################
+########################🎊 zion | NT BOTS 🎊######################################################
 # Create a Pyrogram client
 app = Client("my_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
@@ -31,13 +31,13 @@ app = Client("my_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 START_TXT = '**Hello,** {}!\n\n**Send me the YouTube link of the video you want to upload**'
 ABOUT_TXT = """
 ╭───────────⍟
-├📛 **My Name** : [YouTube Video Uploader Bot](https://t.me/YouTubeUploaderOneBot)
+├📛 **My Name** : [YouTube Video Uploader Bot](http://t.me/YouTube1VIDEO1download_bot)
 ├📢 **Framework** : [Pyrogram 2.0.106](https://docs.pyrogram.org/)
 ├💮 **Language** : [Python 3.12.3](https://www.python.org)
-├👥 **Support Group** : [NT BOTS SUPPORT](https://t.me/NT_BOTS_SUPPORT)
-├🥏 **Channel** : [NT BOT CHANNEL](https://t.me/NT_BOT_CHANNEL)
-├⛲ **Source** : [Click](https://github.com/LISA-KOREA/YouTube-Video-Download-Bot)
-├🎓 **Developer** : [LISA_FAN_LK](https://t.me/LISA_FAN_LK)
+├👥 **Support Group** : [NT BOTS SUPPORT](https://t.me/Zionsupportchat )
+├🥏 **Channel** : [NT BOT CHANNEL](https://t.me/zionmainchannel)
+├⛲ **Source** : [Click](https://github.com/abjhghh/YouTube-Video-Download-Bot)
+├🎓 **Develzionmainc ** FAN_LK](https://t.me/zion_owner)
 ╰───────────────⍟
 """
 
@@ -51,7 +51,7 @@ async def cancel(client, callback_query):
 # About command handler
 @app.on_message(filters.private & filters.command("about"))
 async def about(client, message):
-    if CHANNEL:
+    if CHANNEL:@zionmainchannel
       fsub = await handle_force_subscribe(client, message)
       if fsub == 400:
         return
@@ -73,11 +73,11 @@ async def start(client, message):
     await message.reply_text(START_TXT.format(message.from_user.first_name), reply_markup=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton('📍 Update Channel', url='https://t.me/NT_BOT_CHANNEL'),
+                InlineKeyboardButton('📍 Update Channel', url='https://t.me/zionmainCHANNEL'),
             ],
             [
-                InlineKeyboardButton('👩‍💻 Developer', url='https://t.me/LISA_FAN_LK'),
-                InlineKeyboardButton('👥 Support Group', url='https://t.me/NT_BOTS_SUPPORT'),
+                InlineKeyboardButton('👩‍💻 Developer', url='https://t.me/zion_owner'),
+                InlineKeyboardButton('👥 Support Group', url='https://t.me/zionSUPPORTchat'),
             ],
             [
                 InlineKeyboardButton('⛔️ Close', callback_data='cancel')
@@ -95,7 +95,7 @@ To upload a YouTube video, simply send me the YouTube link.
     
 Enjoy using the bot!
 
-   ©️ Channel : @NT_BOT_CHANNEL
+   ©️ Channel : @zionmainCHANNEL
     """
     message.reply_text(help_text)
 
@@ -103,7 +103,7 @@ Enjoy using the bot!
 @app.on_message(filters.regex(r'^(http(s)?:\/\/)?((w){3}.)?youtu(be|.be)?(\.com)?\/.+'))
 async def process_youtube_link(client, message):
     if CHANNEL:
-      fsub = await handle_force_subscribe(client, message)
+      fsub = awaitCHA _force_subscribe(client, message)
       if fsub == 400:
         return
     youtube_link = message.text
@@ -136,7 +136,7 @@ async def process_youtube_link(client, message):
                 await downloading_msg.delete()
                 await uploading_msg.delete()
 
-                await message.reply_text("\n\nOWNER : @LISA_FAN_LK 💕\n\nSUCCESSFULLY UPLOADED!")
+                await message.reply_text("\n\nOWNER : @Zion_owner \n\nSUCCESSFULLY DOWNLOADED!")
             else:
                 logging.error("No video streams found.")
                 await message.reply_text("Error: No downloadable video found.")
@@ -177,7 +177,7 @@ async def handle_force_subscribe(bot, message):
     except Exception:
         await bot.send_message(
             chat_id=message.from_user.id,
-            text="Something Went Wrong. Contact My [Support Group](https://t.me/NT_BOTS_SUPPORT).",
+            text="Something Went Wrong. Contact My [Support Group](https://t.me/ZionSUPPORTchat).",
             disable_web_page_preview=True,
         )
         return 400
